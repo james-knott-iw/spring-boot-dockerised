@@ -16,7 +16,7 @@ To begin, enter the `/hello-world` directory within the repository:
 cd hello-world
 ```
 
-The next step is to package the spring boot application into a `.jar` file:
+The next step is to package the spring boot application into a `.jar` file which will be located at `/target/hello-world-0.0.1.jar`:
 
 ```bash
 mvn clean package
@@ -35,3 +35,10 @@ To run the Docker image of the Spring Boot application:
 ```bash
 docker run -d -p8080:8080 hello-world:latest
 ```
+
+To verify the Spring Boot application is running. Either go to [http://localhost:8080](http://localhost:8080) in your web browser or perform the following curl command:
+
+```bash
+curl http://localhost:8080
+```
+Check that the response content is - `Hello World!`.
