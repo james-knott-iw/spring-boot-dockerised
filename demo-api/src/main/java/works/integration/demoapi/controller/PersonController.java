@@ -7,21 +7,22 @@ import lombok.AllArgsConstructor;
 import works.integration.demoapi.entity.Person;
 import works.integration.demoapi.service.PersonService;
 
-import java.util.Set;
+import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/person")
-public class ApiController {
+public class PersonController {
 
     PersonService personService;
 
@@ -37,8 +38,22 @@ public class ApiController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<Set<Person>> getPersons() {
+    public ResponseEntity<List<Person>> getPersons() {
         return new ResponseEntity<>(personService.getPersons(), HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Person> updatePerson(@PathVariable Long id, @RequestBody Person person) {
+        return new ResponseEntity<>(personService.updatePerson(id, person), HttpStatus.CREATED);
+
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<HttpStatus> deletePerson(@PathVariable Long id) {
+        personService.deletePerson(id);
+
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
     }
 
 }
