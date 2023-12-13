@@ -35,7 +35,7 @@ To run the Docker image of the Spring Boot application:
 ```bash
 docker run -d -p8080:8080 hello-world:latest
 ```
-
+### Tests
 To verify the Spring Boot application is running. Either go to [http://localhost:8080](http://localhost:8080) in your web browser or perform the following curl command:
 
 ```bash
@@ -70,7 +70,6 @@ To run the Docker image of the Spring Boot application:
 ```bash
 docker run -d -p8080:8080 demo-api:latest
 ```
-
-To test the Demo API, import the Postman requests JSON file [Person Requests.postman_collection.json](/demo-api/Demo%20API%20Requests.postman_collection.json). This Postman Collection contains requests to perform CRUD on Person and Pet Entities.  
-
-There is also an Open API Schema usingSwagger UI at [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+### Tests
+- To test the Demo API, import the Postman requests JSON file [Person Requests.postman_collection.json](/demo-api/Demo%20API%20Requests.postman_collection.json). This Postman Collection contains requests to perform CRUD on Person and Pet Entities.  
+- There is also an Open API Schema usingSwagger UI at [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
