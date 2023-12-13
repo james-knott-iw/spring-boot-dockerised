@@ -40,7 +40,7 @@ public class PersonController {
     @Operation(summary = "Retrieve a Person by Id", description = "Returns a Person based on Id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "404", description = "Person doesn't exist", content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
-            @ApiResponse(responseCode = "200", description = "Successful retrieval of Person", content = @Content(schema = @Schema(implementation = Pet.class))),
+            @ApiResponse(responseCode = "200", description = "Successful retrieval of Person", content = @Content(schema = @Schema(implementation = Person.class))),
     })
 
     @GetMapping("/{id}")
@@ -50,7 +50,7 @@ public class PersonController {
 
     @Operation(summary = "Create Person", description = "Creates a person from the provided payload")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "201", description = "Successful creation of a person", content = @Content(schema = @Schema(implementation = Pet.class))),
+            @ApiResponse(responseCode = "201", description = "Successful creation of a person", content = @Content(schema = @Schema(implementation = Person.class))),
             @ApiResponse(responseCode = "400", description = "Bad request: unsuccessful submission", content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
     })
     @PostMapping

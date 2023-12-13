@@ -1,5 +1,7 @@
 package works.integration.demoapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.media.Schema.AccessMode;
 import jakarta.persistence.Column;
@@ -27,17 +29,19 @@ public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(accessMode = AccessMode.READ_ONLY)
+    @Schema(description = "The pets unique Id", accessMode = AccessMode.READ_ONLY)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne(optional = false)
     @JoinColumn(name = "person_id", referencedColumnName = "id")
-    @Schema(accessMode = AccessMode.READ_ONLY)
+    @Schema(description = "A Pet's person", accessMode = AccessMode.READ_ONLY)
     private Person person;
 
     @NotBlank(message = "Name cannot be blank")
     @NonNull
     @Column
+    @Schema(description = "The Pet's name")
     private String name;
 
 }

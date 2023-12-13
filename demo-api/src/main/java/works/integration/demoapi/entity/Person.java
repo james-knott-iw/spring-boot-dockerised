@@ -34,22 +34,24 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(accessMode = AccessMode.READ_ONLY)
+    @Schema(description = "The Person's unique Id", accessMode = AccessMode.READ_ONLY)
     private long id;
 
     @NotBlank(message = "Name cannot be blank")
     @NonNull
     @Column(nullable = false, unique = true)
+    @Schema(description = "The Person's name")
     private String name;
 
     @NotBlank(message = "Address cannot be blank")
     @NonNull
     @Column(nullable = false, unique = true)
+    @Schema(description = "The Person's address")
     private String address;
 
     @JsonIgnore
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
-    @Schema(accessMode = AccessMode.READ_ONLY)
+    @Schema(description = "The Person's pets", accessMode = AccessMode.READ_ONLY)
     private Set<Pet> pets;
 
 }
