@@ -39,13 +39,13 @@ public class Person {
 
     @NotBlank(message = "Name cannot be blank")
     @NonNull
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     @Schema(description = "The Person's name")
     private String name;
 
     @NotBlank(message = "Address cannot be blank")
     @NonNull
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     @Schema(description = "The Person's address")
     private String address;
 
