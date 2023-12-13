@@ -1,6 +1,6 @@
 # spring-boot-dockerised
 
-This repository contains two versions of Spring Boot applications that can be Dockerised. The first, [Hello World](#hello-world) is a simple hello world application. The second, [Demo API](#demo-api) is an API that allows you to create an Person Entities and Pet Entities. Where one Person can have many Pets.
+This repository contains demonstrations of two versions of Spring Boot applications that can be Dockerised. The first, [Hello World](#hello-world) is a simple hello world application. The second, [Demo API](#demo-api) is an API that allows you to create an Person entities and Pet entities. Where one Person can have many Pets.
 
 ## System Requirements
 
