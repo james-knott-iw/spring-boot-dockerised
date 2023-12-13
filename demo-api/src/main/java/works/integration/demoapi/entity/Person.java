@@ -5,6 +5,8 @@ import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.media.Schema.AccessMode;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,6 +34,7 @@ public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(accessMode = AccessMode.READ_ONLY)
     private long id;
 
     @NotBlank(message = "Name cannot be blank")
@@ -46,6 +49,7 @@ public class Person {
 
     @JsonIgnore
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL)
+    @Schema(accessMode = AccessMode.READ_ONLY)
     private Set<Pet> pets;
 
 }
