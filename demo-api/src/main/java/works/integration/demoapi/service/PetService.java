@@ -13,7 +13,7 @@ public interface PetService {
 
     public Pet savePet(Pet pet, Long id);
 
-    public Pet updatePet(Long id, Pet pet);
+    public Pet updatePet(Long petId, Long personId, Pet pet);
 
     public void deletePet(Long id);
 

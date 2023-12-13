@@ -37,10 +37,10 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public Pet updatePet(Long id, Pet pet) {
-        Pet originalPet = unwrapPet(petRepository.findById(id), id);
+    public Pet updatePet(Long petId, Long personId, Pet pet) {
+        Pet originalPet = unwrapPet(petRepository.findById(petId), petId);
         originalPet.setName(pet.getName());
-        originalPet.setPerson(pet.getPerson());
+        originalPet.setPerson(PersonServiceImpl.unwrapPerson(personRepository.findById(personId), personId));
 
         return petRepository.save(originalPet);
     }
