@@ -8,9 +8,35 @@ This repository contains demonstrations of two versions of Spring Boot applicati
 - Maven
 - Docker
 
+## Starting off
+
+First you need to clone the repository.
+
+This can be done by HTTPS, SSH or GitHubCLI.
+
+### HTTPS
+
+```
+git clone https://github.com/IntegrationWorks/spring-boot-dockerised.git
+```
+
+### SSH
+
+```
+git clone git@github.com:IntegrationWorks/spring-boot-dockerised.git
+```
+
+### GitHubCLI
+```
+gh repo clone IntegrationWorks/spring-boot-dockerised
+```
+
+Open the `/spring-boot-dockerised` directory in a terminal or IDE and follow the next instructions in [Hello World](#hello-world) or [Demo Api](#demo-api).
+
+
 ## Hello World
 
-To begin, enter the [/hello-world](/hello-world) directory within the repository:
+To begin, enter the [/hello-world](/hello-world) directory:
 
 ```bash
 cd hello-world
@@ -45,7 +71,7 @@ Check that the response content is - `Hello World!`.
 
 ## Demo API
 
-To begin, enter the [/demo-api](/demo-api) directory within the repository:
+To begin, enter the [/demo-api](/demo-api) directory:
 
 ```bash
 cd demo-api
