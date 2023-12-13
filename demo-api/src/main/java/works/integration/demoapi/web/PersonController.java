@@ -84,7 +84,7 @@ public class PersonController {
     }
 
     @Operation(summary = "Retrieves a person's pets", description = "Provides a list of all a person's pets")
-    @ApiResponse(responseCode = "200", description = "Successful retrieval of person's pets", content = @Content(array = @ArraySchema(schema = @Schema(implementation = Person.class))))
+    @ApiResponse(responseCode = "200", description = "Successful retrieval of person's pets", content = @Content(array = @ArraySchema(schema = @Schema(implementation = Pet.class))))
     @GetMapping("/{id}/pets")
     public ResponseEntity<Set<Pet>> getMethodName(@PathVariable Long id) {
         return new ResponseEntity<>(personService.getPets(id), HttpStatus.OK);
