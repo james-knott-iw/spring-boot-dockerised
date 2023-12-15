@@ -42,7 +42,7 @@ To begin, enter the [/hello-world](/hello-world) directory:
 cd hello-world
 ```
 
-The next step is to package the spring boot application into a `.jar` file which will be located at `/target/hello-world-0.0.1.jar`:
+The next step is to package the Spring Boot application into a `.jar` file which will be located at `/target/hello-world-0.0.1.jar`:
 
 ```bash
 mvn clean package
@@ -77,7 +77,7 @@ To begin, enter the [/demo-api](/demo-api) directory:
 cd demo-api
 ```
 
-The next step is to package the spring boot application into a `.jar` file which will be located at `/target/demo-api-0.0.1.jar`:
+The next step is to package the Spring Boot application into a `.jar` file which will be located at `/target/demo-api-0.0.1.jar`:
 
 ```bash
 mvn clean package
@@ -90,12 +90,12 @@ To build the Docker image using the Dockerfile located in the `/demo-api` direct
 docker build --tag=demo-api:latest .
 ```
 
-To run the Docker image of the Spring Boot application:
+To run the Docker container of the Spring Boot application:
 
 
 ```bash
 docker run -d -p8080:8080 demo-api:latest
 ```
 ### Tests
-- To test the Demo API, import the Postman requests JSON file [Person Requests.postman_collection.json](/demo-api/Demo%20API%20Requests.postman_collection.json). This Postman Collection contains requests to perform CRUD on Person and Pet Entities.  
-- There is also an Open API Schema usingSwagger UI at [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html) (Work in progress, some definitions are incorrect)
+- To test the Demo API, import the Postman requests JSON file [Person Requests.postman_collection.json](/demo-api/Demo%20API%20Requests.postman_collection.json). This Postman collection contains requests to perform CRUD on Person and Pet Entities.  
+- There is also an Open API Schema using Swagger UI at [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html).
